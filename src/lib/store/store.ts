@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-
+import authSlice from "../store/auth/userSlice"
 const store = configureStore({
        reducer: {
-          
+           auth: authSlice,
        }
 });
 
 export default store
+
+export type RootState = ReturnType<typeof store.getState> //useSelecotr lai type dina chinxa...
 
 export type AppDispatch = typeof store.dispatch; //paxi suggestion , compile time error ,type safty haru dinxa 
 

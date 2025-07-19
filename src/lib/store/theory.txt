@@ -1,0 +1,10 @@
+
+
+# react-reduce
+ 2 ta hook dinxa useDispatch ra useSelector
+1) bridge between the store and the components...
+2) useDispatch vanako store ma data rakhna use garinxa
+3) useSelector vanako 
+
+
+//useSelector and useReducer chi js ko lagi banako ho so tsc ko lagi chi custome hook banayara type define garnu parxa...
