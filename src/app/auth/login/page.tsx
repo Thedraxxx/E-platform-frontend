@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import{FaEnvelope, FaLock} from 'react-icons/fa'
 import { ILoginData } from "./login.types";
  export default function Login(){
+  const dispatch = 
     const [data,setData] = useState<ILoginData>({
       email: '',
       password: ''
@@ -16,7 +17,7 @@ import { ILoginData } from "./login.types";
       }
      function handleSubmit(e: FormEvent<HTMLFormElement>){
         e.preventDefault();
-      
+        dis
     }
       
  return (

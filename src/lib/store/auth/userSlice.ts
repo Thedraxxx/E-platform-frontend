@@ -3,6 +3,7 @@ import { Status } from "../types/type";
 import { IInitialState } from "./userSlice-types";
 import { IUserData } from "./userSlice-types";
 import { AppDispatch } from "../store";
+import API from "@/lib/http/api";
 
 const initialState: IInitialState = {
   user: {
@@ -31,9 +32,18 @@ export default authSlice.reducer
 function login(data){
   return async function loginThunk(dispatch: AppDispatch){
            try {
-                
-           } catch (error) {
             
+              const response = await API.post("users/login",data);
+              if(response.status === 200){
+              dispatch(setUser(response.data.data));
+              dispatch(setStatus(Status.SUCCESS));
+              }
+              else{
+                dispatch(setStatus(Status.ERROR))
+              }
+           } catch (error) {
+              console.log(error)
+               dispatch(setStatus(Status.ERROR))
            }
   }
 }
